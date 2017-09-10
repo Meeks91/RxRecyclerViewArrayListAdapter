@@ -1,2 +1,2 @@
 # RxRecyclerViewArrayListAdapter
-An RxKotlin and generics based ArrayList designed to simply the implementation of RecyclerViews
+An RxKotlin and generics based ArrayList designed to simplify the implementation of RecyclerViews
