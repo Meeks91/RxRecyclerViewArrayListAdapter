@@ -1,4 +1,4 @@
-package com.example.micah.knodechat.rxRecyclerViewArrayListAdaper
+package com.example.micah.rxRecyclerViewArrayListAdaper
 
 /**
  * Created by Micah on 27/08/2017.

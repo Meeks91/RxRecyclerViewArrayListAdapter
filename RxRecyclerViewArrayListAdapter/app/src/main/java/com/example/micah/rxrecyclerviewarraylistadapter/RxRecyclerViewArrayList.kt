@@ -1,4 +1,4 @@
-package com.example.micah.knodechat.rxRecyclerViewArrayListAdaper
+package com.example.micah.rxRecyclerViewArrayListAdaper
 
 import android.app.Activity
 import android.app.Fragment

@@ -1,6 +1,7 @@
-package com.example.micah.knodechat.rxRecyclerViewArrayListAdaper
+package com.example.micah.rxRecyclerViewArrayListAdaper
 
 import android.support.v7.widget.RecyclerView
+
 
 /**
  *

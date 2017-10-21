@@ -1,4 +1,4 @@
-package com.example.micah.knodechat.rxRecyclerViewArrayListAdaper
+package com.example.micah.rxRecyclerViewArrayListAdaper
 
 /**
  * This model is used to tell the RxArrayListRecyclerAdapter how it should
