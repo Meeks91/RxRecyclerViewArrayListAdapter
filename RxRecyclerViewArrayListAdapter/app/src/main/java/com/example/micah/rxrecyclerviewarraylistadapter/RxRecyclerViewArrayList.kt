@@ -103,4 +103,3 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
         else return (rv.context as Fragment).activity
     }
 }
-

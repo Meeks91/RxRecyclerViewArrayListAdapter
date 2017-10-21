@@ -45,5 +45,3 @@ class LayoutConfig(val orientation: Orientation, val rowType: RowType, val spanC
              }
          }
     }
-
-
