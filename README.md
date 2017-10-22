@@ -24,19 +24,18 @@ In your project's build.gradle:
 
 **Usage:**
 
-1 -> Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
+1 -> Create an instance of RxRecyclerViewArrayList to use as the data sou rce and put the data type (e.g. String) you want in the diamond brackets.
 
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
  
 2 -> Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource and LayoutConfig.
 
 ```
-    rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
-                                            LayoutConfig(Orientation.vertical,RowType.single, 1))
-                                                        { customViewHolder, dataType ->
+ rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item, LayoutConfig(Orientation.vertical,RowType.single, 1))
+                                                                                             { customViewHolder, dataType ->
 
-      //here your customViewHolder will be available along with
-      //the dataType you put in the diamond brackets of the rxArrayList
+       //here your customViewHolder will be available along with
+       //the dataType you put in the diamond brackets of the rxArrayList
     }
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
