@@ -35,7 +35,8 @@ In your project's build.gradle:
                                             LayoutConfig(Orientation.vertical,RowType.single, 1))
                                                         { customViewHolder, dataType ->
 
-      //here your customViewHolder will be available along with the dataType you put in the diamond brackets of the rxArrayList
+      //here your customViewHolder will be available along with
+      //the dataType you put in the diamond brackets of the rxArrayList
     }
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
