@@ -42,7 +42,8 @@ In your project's build.gradle:
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
     - The orientation for the rows.
-    - The rowType which can be: single (like a LinearLayoutManager), grid (like a GridLayoutManager), or staggered (like a StaggeredGridLayoutManager).
+    - The rowType which can be: RowType.single (like a LinearLayoutManager), RowType.grid (like a GridLayoutManager),
+      or RowType.staggered (like a StaggeredGridLayoutManager).
     - The spanCount for the rows. This will only be used for the grid or staggered
 
 3 -> Updating the the RecylerView:
