@@ -33,7 +33,9 @@ In your project's build.gradle:
 
     Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
     ```
-    rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item, LayoutConfig(Orientation.vertical, RowType.single, 1)) { customViewHolder, dataType ->
+    rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
+                                            LayoutConfig(Orientation.vertical,RowType.single, 1))
+                                                                            { customViewHolder, dataType ->
 
       //here your customViewHolder will be available along with the dataType you put in the diamond brackets of the rxArrayList
     }
