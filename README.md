@@ -2,7 +2,7 @@
 
 **Description:**
 
- An RxKotlin and generics based ArrayList designed to simplify the implementation of RecyclerViews to a single line.
+ An RxKotlin and generics based ArrayList designed to simplify the implementation of RecyclerViews.
  It also handles data updates by automatically refreshing the RecyclerView whenever data is added or removed.
 
 **Installation:**
@@ -24,21 +24,20 @@ In your project's build.gradle:
 
 **Usage:**
 
-1. Create an instance of RxRecyclerViewArrayList to use as the data source.
-
-    Put the data type (e.g. String) you want in the diamond brackets.
+1. Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
     ```
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
     ```
 2.Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
-    ```
+
+```
     rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
                                             LayoutConfig(Orientation.vertical,RowType.single, 1))
                                                         { customViewHolder, dataType ->
 
       //here your customViewHolder will be available along with the dataType you put in the diamond brackets of the rxArrayList
     }
-      ```
+  ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
     - The orientation for the rows.
