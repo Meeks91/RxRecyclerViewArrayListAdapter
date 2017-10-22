@@ -42,7 +42,7 @@ In your project's build.gradle:
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
-    - An Orientation enum which sets the orientation of the rows. It can either be set to Orienation.vertical
+    - An Orientation enum which sets the orientation of the rows. It can either be set to Orientation.vertical
       or Orientation.horizontal.
     - The RowType enum which can be: RowType.single (like a LinearLayoutManager),
       RowType.grid (like a GridLayoutManager), or RowType.staggered (like a StaggeredGridLayoutManager).
@@ -52,4 +52,4 @@ The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 3 -> To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
 For example, to add data to the RecyclerView call: `rxArrayList.add(DataType())`
 
-That means you just have to update the rxArrayList and the RecylerView will update itself for you.
+That means you just have to update the rxArrayList and the RecyclerView will update itself automatically.
