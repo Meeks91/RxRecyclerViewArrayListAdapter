@@ -45,6 +45,6 @@ class RxArrayListRecyclerAdapter<VH:  RecyclerView.ViewHolder, T> (val rxRecycle
 
     override fun onBindViewHolder(holder: VH, position: Int) {
 
-        layoutUpdateSubject.onNext(LayoutUpdateHolder(holder!!, position))
+        layoutUpdateSubject.onNext(LayoutUpdateHolder(holder, position))
     }
 }
