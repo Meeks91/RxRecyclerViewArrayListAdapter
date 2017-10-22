@@ -28,7 +28,7 @@ In your project's build.gradle:
 
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
  
-2 -> Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
+2 -> Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource and LayoutConfig.
 
 ```
     rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
