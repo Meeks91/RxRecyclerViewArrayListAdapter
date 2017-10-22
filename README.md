@@ -25,9 +25,9 @@ In your project's build.gradle:
 **Usage:**
 
 1 -> Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
-    ```
+
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
-    ```
+ 
 2 -> Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
 
 ```
