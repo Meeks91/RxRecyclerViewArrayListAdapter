@@ -27,13 +27,13 @@ Usage:
 
 1. Create an instance of RxRecyclerViewArrayList to use as the data source:
 
-//create an RxRecyclerViewArrayList. Put the data type (e.g. String) you want in the diamond brackets.
+create an RxRecyclerViewArrayList. Put the data type (e.g. String) you want in the diamond brackets.
 `val rxArrayList = RxRecyclerViewArrayList<DataType>()`
 
 
 2. Binding the instance of the RxRecyclerViewArrayList to the RecyclerView.
 
-//Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount
+Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount
 `rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item, LayoutConfig(Orientation.vertical, RowType.single, 1)) { customViewHolder, dataType ->`
 
         //here your customViewHolder will be available along with the dataType you put in the diamond brackets of the rxArrayList
