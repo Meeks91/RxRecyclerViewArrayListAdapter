@@ -28,7 +28,7 @@ Usage:
 1. Create an instance of RxRecyclerViewArrayList to use as the data source:
 
 create an RxRecyclerViewArrayList. Put the data type (e.g. String) you want in the diamond brackets.
-`val rxArrayList = RxRecyclerViewArrayList<DataType>()`
+    `val rxArrayList = RxRecyclerViewArrayList<DataType>()`
 
 
 2. Binding the instance of the RxRecyclerViewArrayList to the RecyclerView.
