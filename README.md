@@ -3,7 +3,8 @@
 **Description:**
 
  An RxKotlin and generics based ArrayList designed to simplify the implementation of RecyclerViews.
- It also handles data updates by automatically refreshing the RecyclerView whenever data is added or removed.
+ It handles data updates by automatically refreshing the RecyclerView whenever data is added or removed,
+ and automatically applies the appropriate kind of adapter update to ensure that it animates the change for you correctly.
 
 **Installation:**
 
@@ -11,7 +12,7 @@
 
  In your app build.gradle:
 
-    compile "com.github.Meeks91:RxRecyclerViewArrayListAdapter:0.25"
+    compile "com.github.Meeks91:RxRecyclerViewArrayListAdapter:0.26"
     compile "com.android.support:recyclerview-v7:26.0.1"
 
 In your project's build.gradle:
@@ -41,11 +42,14 @@ In your project's build.gradle:
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
-    - The orientation for the rows.
-    - The rowType which can be: RowType.single (like a LinearLayoutManager),
+    - An Orientation object which sets orientation of the rows. It can either be Orienation.vertical
+      or Orientation.horizontal.
+    - The RowType which can be: RowType.single (like a LinearLayoutManager),
       RowType.grid (like a GridLayoutManager), or RowType.staggered (like a StaggeredGridLayoutManager).
     - The spanCount for the rows. Note: This will only be used for the RowType.grid or RowType.staggered
       RowTypes.
 
 3 -> To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
 For example, to add data to the RecyclerView call: `rxArrayList.add(DataType())`
+
+That means you just have to update the rxArrayList and the RecylerView will update itself for you.
