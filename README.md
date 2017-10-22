@@ -35,7 +35,7 @@ In your project's build.gradle:
     ```
     rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
                                             LayoutConfig(Orientation.vertical,RowType.single, 1))
-                                                                            { customViewHolder, dataType ->
+                                                        { customViewHolder, dataType ->
 
       //here your customViewHolder will be available along with the dataType you put in the diamond brackets of the rxArrayList
     }
