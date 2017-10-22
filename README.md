@@ -46,7 +46,5 @@ The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
       RowType.grid (like a GridLayoutManager), or RowType.staggered (like a StaggeredGridLayoutManager).
     - The spanCount for the rows. This will only be used for the grid or staggered
 
-3 -> Updating the the RecylerView:
-
-To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
+3 -> To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
 For example, to add data to the RecyclerView call: `rxArrayList.add(DataType())`
