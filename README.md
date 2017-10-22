@@ -24,11 +24,11 @@ In your project's build.gradle:
 
 **Usage:**
 
-1. Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
+1 -> Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
     ```
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
     ```
-2.Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
+2 -> Call bind() on the rxArrayList. Add your viewHolderClass to the diamond brackets. Then pass in: your RecyclerView, layoutItemResource, LayoutConfig, and column spanCount.
 
 ```
     rxArrayList.bind<customViewHolder>(recycylerView, R.layout.item,
@@ -44,7 +44,7 @@ The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
     - The rowType which can be: single (like a LinearLayoutManager), grid (like a GridLayoutManager), or staggered (like a StaggeredGridLayoutManager).
     - The spanCount for the rows. This will only be used for the grid or staggered
 
-3. Updating the the RecylerView:
+3 -> Updating the the RecylerView:
 
     To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
 
