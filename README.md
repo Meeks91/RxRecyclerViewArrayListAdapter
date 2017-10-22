@@ -24,7 +24,7 @@ In your project's build.gradle:
 
 **Usage:**
 
-1 -> Create an instance of RxRecyclerViewArrayList to use as the data sou rce and put the data type (e.g. String) you want in the diamond brackets.
+1 -> Create an instance of RxRecyclerViewArrayList to use as the data source and put the data type (e.g. String) you want in the diamond brackets.
 
     val rxArrayList = RxRecyclerViewArrayList<DataType>()
  
