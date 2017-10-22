@@ -48,6 +48,5 @@ The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
 3 -> Updating the the RecylerView:
 
-    To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
-
-    For example, to add data to the RecyclerView call: `rxArrayList.add(DataType())`
+To update the RecyclerView you just update the RxRecyclerViewArrayList  by calling the standard ArrayList add(), addAll() and remove() methods on it and the RecylerView will automatically update.
+For example, to add data to the RecyclerView call: `rxArrayList.add(DataType())`
