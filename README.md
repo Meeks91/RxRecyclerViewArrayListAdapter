@@ -42,9 +42,9 @@ In your project's build.gradle:
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
-    - An Orientation object which sets orientation of the rows. It can either be Orienation.vertical
+    - An Orientation enum which sets the orientation of the rows. It can either be set to Orienation.vertical
       or Orientation.horizontal.
-    - The RowType which can be: RowType.single (like a LinearLayoutManager),
+    - The RowType enum which can be: RowType.single (like a LinearLayoutManager),
       RowType.grid (like a GridLayoutManager), or RowType.staggered (like a StaggeredGridLayoutManager).
     - The spanCount for the rows. Note: This will only be used for the RowType.grid or RowType.staggered
       RowTypes.
