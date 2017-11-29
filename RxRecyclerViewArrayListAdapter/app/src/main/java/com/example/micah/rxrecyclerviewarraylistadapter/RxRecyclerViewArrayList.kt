@@ -76,7 +76,7 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
     /**
      * Sets up the specified [rv] with the given [rvAdapter] and [layoutConfig]
      */
-    fun <VH: RecyclerView.ViewHolder> setupRecyclerViewWith(rvAdapter: RxArrayListRecyclerAdapter<VH, T>, layoutConfig: LayoutConfig, rv: RecyclerView){
+    private fun <VH: RecyclerView.ViewHolder> setupRecyclerViewWith(rvAdapter: RxArrayListRecyclerAdapter<VH, T>, layoutConfig: LayoutConfig, rv: RecyclerView){
 
         rv.adapter = rvAdapter
         rv.layoutManager = layoutConfig.generateLayoutManagerUsing(rv.context)
