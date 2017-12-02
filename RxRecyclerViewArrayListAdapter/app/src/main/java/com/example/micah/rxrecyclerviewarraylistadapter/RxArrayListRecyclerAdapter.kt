@@ -31,15 +31,17 @@ class RxArrayListRecyclerAdapter<VH:  RecyclerView.ViewHolder, T> (val rxRecycle
      * The [dataUpdateHolder] contains whether
      * we're adding or removing data and the index the change is occuring at
      */
-    fun notifyDataUpdateUsing(dataUpdateHolder: RxRecyclerViewArrayListDataUpdateHolder<T>){
+    fun notifyDataUpdateUsing(dataUpdateHolder: RxRecyclerViewArrayListDataUpdateHolder){
 
-        if (dataUpdateHolder.isUpdateAddingData == true)
+        when(true) {
 
-            notifyDataSetChanged()
-
-        else
-
-            notifyItemRemoved(dataUpdateHolder.indexOfUpdate)
+            dataUpdateHolder is AddItemUpdate -> notifyItemInserted(itemCount - 1)
+            dataUpdateHolder is AddItemAtIndexUpdate -> notifyItemInserted((dataUpdateHolder as AddItemAtIndexUpdate).indexOfUpdate)
+            dataUpdateHolder is AddAll -> notifyItemRangeInserted(itemCount - 1, (dataUpdateHolder as AddAll).amountOfAddedItems)
+            dataUpdateHolder is AddAllAtIndex -> notifyItemRangeInserted((dataUpdateHolder as AddAllAtIndex).indexOfUpdate, dataUpdateHolder.amountOfAddedItems)
+            dataUpdateHolder is RemoveAt -> notifyItemRemoved((dataUpdateHolder as RemoveAt).indexOfUpdate)
+            dataUpdateHolder is RemoveAll -> notifyItemRangeRemoved(0, itemCount)
+        }
     }
 
 

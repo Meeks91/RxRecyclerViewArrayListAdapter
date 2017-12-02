@@ -13,7 +13,7 @@ import io.reactivex.subjects.PublishSubject
 class RxRecyclerViewArrayList<T>: ArrayList<T> {
 
    private val disposeBag = CompositeDisposable()
-   private val arrayListDataUpdatesSubject = PublishSubject.create<RxRecyclerViewArrayListDataUpdateHolder<T>>()
+   private val arrayListDataUpdatesSubject = PublishSubject.create<RxRecyclerViewArrayListDataUpdateHolder>()
 
     constructor(): super()
 
@@ -22,7 +22,7 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
     override fun add(element: T): Boolean {
 
         //send data change to trigger recyclerView update
-        arrayListDataUpdatesSubject.onNext(RxRecyclerViewArrayListDataUpdateHolder(size - 1, true))
+        arrayListDataUpdatesSubject.onNext(AddItemUpdate())
 
         return super.add(element)
     }
@@ -30,7 +30,7 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
     override fun removeAt(index: Int): T {
 
         //send data change to trigger recyclerView update
-        arrayListDataUpdatesSubject.onNext(RxRecyclerViewArrayListDataUpdateHolder(index, false))
+        arrayListDataUpdatesSubject.onNext(RemoveAt(index))
 
         return super.removeAt(index)
     }
@@ -38,7 +38,7 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
     override fun add(index: Int, element: T) {
 
         //send data change to trigger recyclerView update
-        arrayListDataUpdatesSubject.onNext(RxRecyclerViewArrayListDataUpdateHolder(index, true))
+        arrayListDataUpdatesSubject.onNext(AddItemAtIndexUpdate(index))
 
         super.add(index, element)
     }
@@ -46,9 +46,25 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
     override fun addAll(elements: Collection<T>): Boolean {
 
         //send data change to trigger recyclerView update
-        arrayListDataUpdatesSubject.onNext(RxRecyclerViewArrayListDataUpdateHolder(0, true))
+        arrayListDataUpdatesSubject.onNext(AddAll(elements.size))
 
         return super.addAll(elements)
+    }
+
+    override fun addAll(index: Int, elements: Collection<T>): Boolean {
+
+        //send data change to trigger recyclerView update
+        arrayListDataUpdatesSubject.onNext(AddAllAtIndex(index, elements.size))
+
+        return super.addAll(index, elements)
+    }
+
+    override fun removeAll(elements: Collection<T>): Boolean {
+
+        //send data change to trigger recyclerView update
+        arrayListDataUpdatesSubject.onNext(RemoveAll())
+
+        return super.removeAll(elements)
     }
 
     /**
