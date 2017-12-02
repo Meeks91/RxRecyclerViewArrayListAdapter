@@ -38,7 +38,8 @@ In your project's build.gradle:
 
        //here your customViewHolder will be available along with
        //the dataType you put in the diamond brackets of the rxArrayList
-    }
+   
+   }.addTo(disposable)
   ```
 The LayoutConfig above acts like a LayoutManager. It takes 3 parameters:
 
