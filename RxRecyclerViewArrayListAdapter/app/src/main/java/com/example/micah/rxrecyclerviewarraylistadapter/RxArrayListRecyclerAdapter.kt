@@ -3,6 +3,7 @@ package com.example.micah.rxRecyclerViewArrayListAdaper
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.micah.rxrecyclerviewarraylistadapter.updateEvents.ClearAll
 import io.reactivex.subjects.PublishSubject
 import kotlin.reflect.KFunction
 
@@ -40,7 +41,7 @@ class RxArrayListRecyclerAdapter<VH:  RecyclerView.ViewHolder, T> (val rxRecycle
             dataUpdateHolder is AddAll -> notifyItemRangeInserted(itemCount - 1, (dataUpdateHolder as AddAll).amountOfAddedItems)
             dataUpdateHolder is AddAllAtIndex -> notifyItemRangeInserted((dataUpdateHolder as AddAllAtIndex).indexOfUpdate, dataUpdateHolder.amountOfAddedItems)
             dataUpdateHolder is RemoveAt -> notifyItemRemoved((dataUpdateHolder as RemoveAt).indexOfUpdate)
-            dataUpdateHolder is RemoveAll -> notifyItemRangeRemoved(0, itemCount)
+            dataUpdateHolder is ClearAll -> notifyItemRangeRemoved(0, itemCount)
         }
     }
 

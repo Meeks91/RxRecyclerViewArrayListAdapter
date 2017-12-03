@@ -2,6 +2,7 @@ package com.example.micah.rxRecyclerViewArrayListAdaper
 
 import android.app.Activity
 import android.support.v7.widget.RecyclerView
+import com.example.micah.rxrecyclerviewarraylistadapter.updateEvents.ClearAll
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.subjects.PublishSubject
@@ -59,14 +60,13 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
         return super.addAll(index, elements)
     }
 
-    override fun removeAll(elements: Collection<T>): Boolean {
+    override fun clear() {
 
         //send data change to trigger recyclerView update
-        arrayListDataUpdatesSubject.onNext(RemoveAll())
+        arrayListDataUpdatesSubject.onNext(ClearAll())
 
-        return super.removeAll(elements)
+        super.clear()
     }
-
     /**
      * Binds this RxRecyclerViewArrayList to the specified [rv]. It sets up the the [rv] and inits the
      * subscription to the global [arrayListDataUpdatesSubject] so that data updates can be passed to the created
