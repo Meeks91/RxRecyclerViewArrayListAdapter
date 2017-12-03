@@ -34,17 +34,17 @@ class RxArrayListRecyclerAdapter<VH:  RecyclerView.ViewHolder, T> (val rxRecycle
      */
     fun notifyDataUpdateUsing(dataUpdateHolder: RxRecyclerViewArrayListDataUpdateHolder){
 
-        //ensure index is never == -1
-        val index = if (itemCount > 0) itemCount - 1 else 0
+        //ensure item count doesn't lead to -1 index
+        val maximumIndex = if (itemCount > 0) itemCount - 1 else 0
 
         when(true) {
 
-            dataUpdateHolder is AddItemUpdate -> notifyItemInserted(index)
+            dataUpdateHolder is AddItemUpdate -> notifyItemInserted(maximumIndex)
             dataUpdateHolder is AddItemAtIndexUpdate -> notifyItemInserted((dataUpdateHolder as AddItemAtIndexUpdate).indexOfUpdate)
-            dataUpdateHolder is AddAll -> notifyItemRangeInserted(index, (dataUpdateHolder as AddAll).amountOfAddedItems)
+            dataUpdateHolder is AddAll -> notifyItemRangeInserted(maximumIndex, (dataUpdateHolder as AddAll).amountOfAddedItems)
             dataUpdateHolder is AddAllAtIndex -> notifyItemRangeInserted((dataUpdateHolder as AddAllAtIndex).indexOfUpdate, dataUpdateHolder.amountOfAddedItems)
             dataUpdateHolder is RemoveAt -> notifyItemRemoved((dataUpdateHolder as RemoveAt).indexOfUpdate)
-            dataUpdateHolder is ClearAll -> notifyItemRangeRemoved(0, index)
+            dataUpdateHolder is ClearAll -> notifyItemRangeRemoved(0, itemCount)
         }
     }
 
