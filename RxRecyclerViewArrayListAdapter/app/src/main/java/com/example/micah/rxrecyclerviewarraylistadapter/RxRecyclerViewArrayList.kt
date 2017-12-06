@@ -3,6 +3,7 @@ package com.example.micah.rxRecyclerViewArrayListAdaper
 import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import com.example.micah.rxrecyclerviewarraylistadapter.updateEvents.ClearAll
+import com.example.micah.rxrecyclerviewarraylistadapter.updateEvents.SetItemUpdate
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.subjects.PublishSubject
@@ -58,6 +59,14 @@ class RxRecyclerViewArrayList<T>: ArrayList<T> {
         arrayListDataUpdatesSubject.onNext(AddAllAtIndex(index, elements.size))
 
         return super.addAll(index, elements)
+    }
+
+    override fun set(index: Int, element: T): T {
+
+        //send data change to trigger recyclerView update
+        arrayListDataUpdatesSubject.onNext(SetItemUpdate(index))
+
+        return super.set(index, element)
     }
 
     override fun clear() {
