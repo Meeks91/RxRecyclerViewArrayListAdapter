@@ -12,7 +12,7 @@
 
  In your app build.gradle:
 
-    compile "com.github.Meeks91:RxRecyclerViewArrayListAdapter:0.26"
+    compile "com.github.Meeks91:RxRecyclerViewArrayListAdapter:0.31"
     compile "com.android.support:recyclerview-v7:26.0.1"
 
 In your project's build.gradle:
