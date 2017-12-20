@@ -47,6 +47,7 @@ class RxArrayListRecyclerAdapter<VH:  RecyclerView.ViewHolder, T> (val rxRecycle
             dataUpdateHolder is RemoveAt -> notifyItemRemoved((dataUpdateHolder as RemoveAt).indexOfUpdate)
             dataUpdateHolder is ClearAll -> notifyItemRangeRemoved(0, itemCount)
             dataUpdateHolder is SetItemUpdate -> notifyItemChanged((dataUpdateHolder as SetItemUpdate).indexOfUpdate)
+            dataUpdateHolder is SetItemUpdate -> notifyItemRangeRemoved(0, itemCount)
         }
     }
 
